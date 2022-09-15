@@ -1,0 +1,35 @@
+// ブレイクポイント指定
+$sp: 480px;
+$tablet: 768px;
+$pc: 1080px;
+
+@mixin sp {
+    @media screen and (min-width: ($sp)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media screen and (min-width: ($tablet)) {
+        @content;
+    }
+}
+  
+
+@mixin pc {
+    @media screen and (min-width: ($pc)) {
+        @content;
+    }
+}
+
+// retina対応のメディアクエリ
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}

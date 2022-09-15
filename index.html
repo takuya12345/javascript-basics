@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./scss/style.css">
     <title>JavaScript Basics</title>
     
 </head>
@@ -44,6 +44,8 @@
     <main>
         <p>testtesttesttesttesttesttesttesttesttesttesttest</p>
     </main>
+
+
     
     <section id="modal" class="hidden">
         <p>これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。</p>
@@ -51,6 +53,29 @@
     </section>
     <div id="open">詳細を見る</div>
     <div id="mask" class="hidden"></div>
-    <script src="./index.js"></script>
+
+
+
+    <div class="container">
+        <ul class="menu">
+            <li>
+                <a href="#" class="active" data-id="about">サイトの概要</a>
+                <a href="#" data-id="service">サービスの内容</a>
+                <a href="#" data-id="contact"> お問い合せ</a>
+            </li>
+        </ul>
+
+        <section class="content active" id="about">
+            サイトの概要サイトの概要サイトの概要サイトの概要サイトの概要サイトの概要
+        </section>
+        <section class="content" id="service">
+            サービスの内容サービスの内容サービスの内容サービスの内容サービスの内容サービスの内容
+        </section>
+        <section class="content" id="contact">
+            お問い合せお問い合せお問い合せお問い合せお問い合せお問い合せお問い合せ
+        </section>
+
+    </div>
+    <script src="./js/index.js"></script>
 </body>
 </html>

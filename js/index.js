@@ -8,6 +8,7 @@
     bargarOpen.addEventListener('click', () => {
         overlay.classList.add('show');
         bargarOpen.classList.add('hide');
+        console.log("hello");
     });
 
     bargarClose.addEventListener('click', () => {
@@ -35,5 +36,27 @@
         // modal.classList.add('hidden');
         // mask.classList.add('hidden');
         close.click();
+    });
+
+
+    const menuItems = document.querySelectorAll('.menu li a');
+    const contents = document.querySelectorAll('.content');
+
+    menuItems.forEach(clickedItem => {
+        clickedItem.addEventListener('click', e => {
+            e.preventDefault();
+
+            menuItems.forEach(item => {
+                item.classList.remove('active')
+            })
+            clickedItem.classList.add('active');
+
+
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            document.getElementById(clickedItem.dataset.id).classList.add('active');
+        });
     });
 }
