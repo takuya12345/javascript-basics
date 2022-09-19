@@ -17,6 +17,47 @@
     });
 
 
+
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+    const images = document.querySelector('.images');
+    const slides = images.children;
+    let currentIndex = 0;
+
+    function updateButtons() {
+        prev.classList.remove('hidden');
+        next.classList.remove('hidden');
+
+        if (currentIndex === 0) {
+            prev.classList.add('hidden');
+        }
+        if (currentIndex === slides.length -1) {
+            next.classList.add('hidden');
+        }
+    }
+
+    function moveSlides() {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        images.style.transform = `translateX(${-1 * slideWidth * currentIndex}px)`;
+    }
+
+    updateButtons();
+    next.addEventListener('click', () => {
+        currentIndex++;
+        updateButtons();
+        moveSlides();
+    });
+
+    prev.addEventListener('click', () => {
+        currentIndex--;
+        updateButtons();
+        moveSlides();
+    });
+
+
+
+
+
     const open = document.getElementById('open');
     const close = document.getElementById('close');
     const modal = document.getElementById('modal');
