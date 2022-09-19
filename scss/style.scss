@@ -4,29 +4,29 @@ body {
     font-size: 14px;
 }
 
-header {
-    display: flex;
-    padding: 0 16px;
-
-    h1 {
-        margin: 0;
-        font-size: 22px;
-        line-height: 64px;
-    }
-}
-
-
-.sp-menu {
-    margin-left: auto;
-}
-
-.sp-menu #bargar-open {
-    font-size: 32px;
-    line-height: 64px;
-    cursor: pointer;
-}
-
 @media screen and (max-width: 600px) {
+
+    header {
+        display: flex;
+        padding: 0 16px;
+    
+        h1 {
+            margin: 0;
+            font-size: 22px;
+            line-height: 64px;
+        }
+    }
+
+    .sp-menu {
+        margin-left: auto;
+    }
+    
+    .sp-menu #bargar-open {
+        font-size: 32px;
+        line-height: 64px;
+        cursor: pointer;
+    }
+
     .pc-menu {
         display: block;
         margin-left: auto;
@@ -95,7 +95,79 @@ header {
             padding: 12px;
         }
     }
-        
+    
+    .faq {
+        h1 {
+            font-size: 18px;
+            border-bottom: 1px solid #000;
+            padding: 8px 16px;
+            margin-bottom: 16px;
+        }
+
+        dl {
+            div{
+                margin-bottom: 8px;
+
+                
+                dt {
+                    padding: 8px;
+                    cursor: pointer;
+                    user-select: none;
+                    position: relative;
+                    
+                    &::before {
+                        content: 'Q. ';
+                    }
+                    
+                    &::after {
+                        content: '+';
+                        position: absolute;
+                        top: 8px;
+                        right: 16px;
+                        transition: transform .3s;
+                    }
+                }
+                
+                &.appear {
+                    dt::after {
+                        transform: rotate(45deg);
+                    }
+                }
+                
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: none;
+                    }
+                }
+    
+                &.appear dd {
+                    display: block;
+                    animation: .3s fadeIn;
+                }
+
+                dd {
+                    padding: 8px;
+                    margin: 0;
+                    display: none;
+                    
+                    &::before {
+                        content: 'A. ';
+                    }
+                }
+                
+            }
+
+
+
+        }
+
+    }
 
 
 }
