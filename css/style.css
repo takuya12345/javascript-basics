@@ -1,10 +1,11 @@
-body {
-  margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 14px;
-}
-
 @media screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    max-width: 100%;
+    color: #444;
+  }
   header {
     display: flex;
     padding: 0 16px;
@@ -43,7 +44,7 @@ body {
   }
   .container {
     margin: 30px auto;
-    width: 500px;
+    max-width: 100%;
   }
   .container .menu {
     list-style: none;
@@ -75,7 +76,6 @@ body {
     display: block;
     background: #555;
     color: #fff;
-    min-height: 150px;
     padding: 12px;
   }
   .faq h1 {
