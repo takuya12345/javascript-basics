@@ -22,7 +22,7 @@
     .sp-menu {
         margin-left: auto;
         
-        #bargar-open {
+        #burger-open {
             font-size: 32px;
             line-height: 64px;
             cursor: pointer;
@@ -105,6 +105,28 @@
             
             .hidden {
                 display: none;
+            }
+        }
+        
+        .slide-button {
+            margin-top: 16px;
+            text-align: center;
+            
+            button {
+                border: none;
+                width: 16px;
+                height: 16px;
+                background: #ddd;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            button + button {
+                margin-left: 8px;
+            }
+
+            .current {
+                background: #999;
             }
         }
     }
@@ -239,7 +261,7 @@
 
 
 
-    // .sp-menu #bargar-open.hide {
+    // .sp-menu #burger-open.hide {
     //     display: none;
     // }
 
@@ -257,7 +279,7 @@
         transition: opacity .6s;
     }
 
-    .overlay #bargar-close {
+    .overlay #burger-close {
         position: absolute;
         top: 16px;
         right: 16px;
